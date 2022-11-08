@@ -521,6 +521,16 @@ function GlobalStoreContextProvider(props) {
         });
     }
 
+    let handleKeyDown = (event) => {
+        if (event.ctrlKey && (event.key === 'z' || event.key === 'Z')) {
+            store.undo();
+        }
+        if (event.ctrlKey && (event.key === 'y' || event.key === 'Y')) {
+            store.redo();
+        }
+    }
+    document.onkeydown = handleKeyDown;
+
     return (
         <GlobalStoreContext.Provider value={{
             store
