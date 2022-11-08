@@ -12,11 +12,15 @@ function Statusbar() {
     let text ="";
     if (store.currentList)
         text = store.currentList.name;
-    return (
-        <div id="playlister-statusbar">
-            <Typography variant="h4">{text}</Typography>
-        </div>
-    );
+    if (store.currentList) {
+        return (
+            <div id="playlister-statusbar">
+                <Typography variant="h4">{text}</Typography>
+            </div>
+        );
+    }
+    else
+        return (<div></div>);
 }
 
 export default Statusbar;

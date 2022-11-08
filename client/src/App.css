@@ -112,14 +112,16 @@ body {
   background-color: var(--swatch-accent);
 }
 
-#playlist-statusbar {
+#playlister-statusbar {
   position: absolute;
+  overflow-y: scroll;
   left: 0%;
   top: 90%;
   width: 100%;
   height: 10%;
   background-color: lightsalmon;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: 36pt;
@@ -152,6 +154,13 @@ body {
   display: flex;
   flex-direction: column;
   overflow: scroll;
+}
+#song-cards-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 80%;
+  overflow-y: scroll;
 }
 
 .list-card,
@@ -289,13 +298,15 @@ input {
 
 .modal-dialog {
   position: relative;
-  max-width: 800px;
-  max-height: 80vh;
+  max-width: 1200vw;
+  max-height: 600vh;
   background: var(--swatch-complement);
   overflow: auto;
   cursor: default;
   border-width: 5px;
   border-radius: 10px;
+  box-shadow: 5px 10px #888888;
+  border-color: black;
   border-style: groove;
 }
 
@@ -313,6 +324,10 @@ input {
   align-items: center;
   justify-content: space-between;
   border-bottom: dotted;
+  font-size:32pt;
+  font-weight: bold;
+  background-color: #669966;
+  color:white;
 }
 
 .modal-header,
